@@ -3,7 +3,7 @@ const AWS = require('aws-sdk');
 const s3 = new AWS.S3({
 });
 
-async function downloadObject(bucket, key, versionId) {
+async function getVersionData(bucket, key, versionId) {
   try {
       const params = {
           Bucket: bucket,
@@ -17,4 +17,4 @@ async function downloadObject(bucket, key, versionId) {
   }
 }
 
-module.exports = { downloadObject };
+module.exports = { getVersionData };
