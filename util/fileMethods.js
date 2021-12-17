@@ -1,4 +1,5 @@
 const fs = require('fs')
+const logger = require('./logger');
 
 async function readFileData (inputFile) {
   const data = await fs.promises.readFile(inputFile);
@@ -16,7 +17,7 @@ async function writeFileData (dirname, fileName, data) {
     if(err) {
       throw new Error (e);
     } else {
-      console.log('The file has been saved!');
+      logger.info('The file has been saved!');
     }  
   });
 }
