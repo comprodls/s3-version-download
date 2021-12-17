@@ -1,0 +1,16 @@
+[
+  {
+    "Key": "folder/file.txt",
+    "Version": [
+      "versionId-1",
+      "versionId-2"
+    ]
+  },
+  {
+    "Key": "folder/subfolder/data.json",
+    "Version": [
+      "versionId-1",
+      "versionId-2"
+    ]
+  }
+]
