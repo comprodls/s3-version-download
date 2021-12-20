@@ -1,4 +1,5 @@
 const { downloadFiles } = require('./helpers/download-file');
+const logger = require('./util/logger');
 const { defaults } = require('./config.json');
 
 const argv = require("minimist")(process.argv.slice(2));
@@ -13,10 +14,10 @@ function checkArguments() {
   }
   else {
     if (!argv.input) {
-      console.log('No input argument, using default input = input.json');
+      logger.info('No input argument, using default input = input.json');
     }
     if (!argv.outputdir) {
-      console.log('No outputdir argument, using default outputdir = result');
+      logger.info('No outputdir argument, using default outputdir = result');
     }
   }
 }
@@ -26,6 +27,6 @@ function checkArguments() {
     checkArguments();
     await downloadFiles(bucket, inputFile, outputFolder);
   } catch (e) {
-    console.log(e);
+    logger.error(e.message);
   } 
 })();

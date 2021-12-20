@@ -2,11 +2,15 @@ const fs = require('fs')
 const logger = require('./logger');
 
 async function readFileData (inputFile) {
-  const data = await fs.promises.readFile(inputFile);
-  return JSON.parse(data.toString());
+  try {
+    const data = await fs.promises.readFile(inputFile);
+    return JSON.parse(data.toString());
+  } catch (e) {
+    throw new Error(`input: ${inputFile}, Couldn't read`)
+  }
 }
 
-async function writeFileData (dirname, fileName, data) {
+async function writeFileData (dirname, fileName, data, key, versionId) {
   try {
     await fs.promises.stat(dirname);
   } catch (e) {
@@ -15,9 +19,9 @@ async function writeFileData (dirname, fileName, data) {
 
   fs.writeFile(fileName, data, (err) => {
     if(err) {
-      throw new Error (e);
+      throw new Error (`key: ${key}, version: ${versionId}, Couldn't save in local system`);
     } else {
-      logger.info('The file has been saved!');
+      logger.info(`key: ${key}, version: ${versionId}, Saved in local system`);
     }  
   });
 }

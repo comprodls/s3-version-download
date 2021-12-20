@@ -12,14 +12,14 @@ async function downloadFiles(bucket, inputFile, outputFolder) {
         try {
           const data = await getVersionData(bucket, file.Key, versionId);
           const { dirName, fileName } = getFilePath(file.Key, outputFolder, versionId);
-          await writeFileData(dirName, fileName, data);
+          await writeFileData(dirName, fileName, data, file.Key, versionId);
         } catch (e) {
-          logger.error(e);
+          logger.error(e.message);
         }
       })
     })
   } catch (e) {
-    logger.error(e);
+    logger.error(e.message);
   } 
 };
 
