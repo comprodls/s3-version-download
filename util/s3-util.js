@@ -13,7 +13,7 @@ async function getVersionData(bucket, key, versionId) {
       const data = await s3.getObject(params).promise();
       return  data.Body.toString('utf-8');
   } catch (e) {
-      throw new Error(`Could not restore file ${key} from S3: ${e.message}`)
+      throw new Error(`key: ${key}, version: ${versionId}, Couldn't download from S3`)
   }
 }
 

@@ -1,0 +1,6 @@
+{
+	"defaults": {
+		"input": "input.json",
+		"outputdir": "result"
+	}
+}
