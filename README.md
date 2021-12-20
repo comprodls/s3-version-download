@@ -55,24 +55,25 @@ $ node index.js -b my-bucket --inputfile input.json --outputfolder result
 ```
 usage: node index.js [-b BUCKET] [--inputfile INPUT FILE] [--outputfolder OUTPUT FOLDER]
 
-required arguments:
-  -b              BUCKET          s3 bucket to download from
+required argument:
+  -b   BUCKET    s3 bucket to download from
+
+optional arguments:
   --inputfile     INPUT FILE      AWS S3 key and corresponding versions to download
-  --outputfolder  OUTPUT FOLDER   a location to save the downloaded file from AWS S3
-                   
+  --outputfolder  OUTPUT FOLDER   a location to save the downloaded file from AWS S3                
 ```
 ## Sample Input
 
 To download versions from AWS S3, you must give a key as well as the versions you want to download.
-For your reference, we've included a sample data file 'sampleInput.json'.
+For your reference, we've included a sample data file 'input.json'.
 
 ```
 [
   {
-    "Key": "folder/file.txt",
+    "Key": "folder3/a.txt",
     "Version": [
-      "versionId-1",
-      "versionId-2"
+      "grCvDJcKPkkuF16zz8R2SNLLZ6G6qDCP",
+      "ma5Q3QtlDDAotBM171DKFuVli.6GO7UL"
     ]
   }
 ]
