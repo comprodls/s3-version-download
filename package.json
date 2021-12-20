@@ -1,13 +1,21 @@
 {
-  "name": "s3-download",
+  "name": "s3-version",
   "version": "1.0.0",
-  "description": "",
+  "description": "A tool to download multiple files from s3 with specific versions",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yashijain1998/s3-version"
+  },
+  "keywords": [
+    "s3",
+    "versions"
+  ],
   "dependencies": {
     "aws-sdk": "^2.1046.0",
     "minimist": "^1.2.5",
