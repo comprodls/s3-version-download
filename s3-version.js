@@ -6,26 +6,26 @@ const argv = require("minimist")(process.argv.slice(2));
 
 const bucket = argv.bucket;
 const inputFile = argv.inputfile || defaults.inputfile;
-const outputFolder = argv.outputdir || defaults.outputdir;
+const outputDir = argv.outputdir || defaults.outputdir;
 
 function checkArguments() {
   if (!bucket) {
-    throw new Error('Bucket argument is missing. Exiting');
+    throw new Error('Bucket argument is missing. Exiting script');
   }
-  else {
-    if (!argv.inputfile) {
-      logger.info('No input argument, using default input = input.json');
-    }
-    if (!argv.outputdir) {
-      logger.info('No outputdir argument, using default outputdir = result');
-    }
+  if (!argv.inputfile) {
+    logger.info('No inputfile argument provided, using default');
+  }
+  if (!argv.outputdir) {
+    logger.info('No outputDir argument provided, using default');
   }
 }
 
 (async () => {
   try {
+    logger.info('Starting script');
     checkArguments();
-    await downloadFiles(bucket, inputFile, outputFolder);
+    logger.info(`Script parameters: bucket=${bucket}, inputfile=${inputFile}, outputdir=${outputDir}`);
+    await downloadFiles(bucket, inputFile, outputDir);
   } catch (e) {
     logger.error(e.message);
   } 

@@ -1,15 +1,21 @@
 const { transports, createLogger, format } = require('winston');
 const { getFormattedTime } = require('./date-format');
+const { LogConfig } = require('../config.json');
+
+const logFormat = format.printf(({ level, message, timestamp }) => {
+  return `[${timestamp}] ${level}: ${message}`;
+});
 
 const logConfiguration = {
   format: format.combine(
+    format.colorize(),
     format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
-    format.json()
+    logFormat 
   ),
   transports: [
     new transports.Console(),
     new transports.File({
-        filename: `logs/${ getFormattedTime() }.log`,
+        filename: `${LogConfig.logDir}/${ getFormattedTime() }.log`,
         maxsize: 1000
     })
   ]

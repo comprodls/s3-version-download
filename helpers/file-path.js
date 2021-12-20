@@ -1,8 +1,8 @@
 const path = require('path');
 
-function getFilePath(key, outputFolder, versionId) {
+function getFilePath(key, outputDir, versionId) {
   const keyPath = path.parse(key);
-  const dirName = path.join(outputFolder, keyPath.dir);
+  const dirName = path.join(outputDir, keyPath.dir);
   let fileName = `${keyPath.name}-${versionId}${keyPath.ext}`;
   fileName = path.join(dirName, fileName);
   return {

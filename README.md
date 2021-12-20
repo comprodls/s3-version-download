@@ -9,7 +9,7 @@ It takes time to do this with the web interface: The Amazon S3 online administra
 With this script, you can simply download a version of a file to the local system by executing a simple command such as:
 
 ```
-$ node s3-version.js --bucket my-bucket --inputfile input.json --outputdir result
+$ node s3-version.js --bucket my-bucket --inputfile input.json --outputDir result
 ```
 
 ## Installing
@@ -35,7 +35,7 @@ $ npm install
 Run the script:
 
 ```
-$ node s3-version.js --bucket my-bucket --inputfile input.json --outputdir result
+$ node s3-version.js --bucket my-bucket --inputfile input.json --outputDir result
 ```
 
 ## Requirements
@@ -53,14 +53,14 @@ $ node s3-version.js --bucket my-bucket --inputfile input.json --outputdir resul
 ## Command line options
 
 ```
-usage: node s3-version.js [--bucket BUCKET] [--inputfile INPUT FILE] [--outputdir OUTPUT FOLDER]
+usage: node s3-version.js [--bucket BUCKET] [--inputfile INPUT FILE] [--outputDir OUTPUT FOLDER]
 
 required argument:
   --bucket     BUCKET    S3 bucket hosting the files with versioning enabled
 
 optional arguments:
   --inputfile  INPUT FILE      Input file with details of key and corresponding versions to download
-  --outputdir  OUTPUT FOLDER   local folder in which the downloaded files are saved
+  --outputDir  OUTPUT FOLDER   local folder in which the downloaded files are saved
 ```
 ## Sample Input
 
