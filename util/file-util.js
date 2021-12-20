@@ -6,7 +6,7 @@ async function readFileData (inputFile) {
     const data = await fs.promises.readFile(inputFile);
     return JSON.parse(data.toString());
   } catch (e) {
-    throw new Error(`input: ${inputFile}, Couldn't read`)
+    throw new Error(`inputfile: ${inputFile}, Couldn't read`)
   }
 }
 

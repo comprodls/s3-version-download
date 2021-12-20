@@ -5,15 +5,15 @@ const { defaults } = require('./config.json');
 const argv = require("minimist")(process.argv.slice(2));
 
 const bucket = argv.bucket;
-const inputFile = argv.input || defaults.input;
+const inputFile = argv.inputfile || defaults.inputfile;
 const outputFolder = argv.outputdir || defaults.outputdir;
 
 function checkArguments() {
   if (!bucket) {
-    throw new Error('Bucket argument is missing');
+    throw new Error('Bucket argument is missing. Exiting');
   }
   else {
-    if (!argv.input) {
+    if (!argv.inputfile) {
       logger.info('No input argument, using default input = input.json');
     }
     if (!argv.outputdir) {

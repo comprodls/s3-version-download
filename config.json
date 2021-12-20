@@ -1,6 +1,6 @@
 {
 	"defaults": {
-		"input": "input.json",
+		"inputfile": "input.json",
 		"outputdir": "result"
 	}
 }
