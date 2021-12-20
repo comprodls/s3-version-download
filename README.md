@@ -89,14 +89,13 @@ For your reference, we've included a sample data file 'input.json'.
 ## Output
 The files will be downloaded and saved to the `ouputdir` folder. Saved file names will be concatenation of specified file name and version. For example, for the input specified in above section, outpt dir will be
 ```
--result/
-      -folder3/
-          -a-grCvDJcKPkkuF16zz8R2SNLLZ6G6qDCP.txt
-          -a-ma5Q3QtlDDAotBM171DKFuVli.6GO7UL.txt
-          -subfolder1/
-              -sample2-__MKXwPr5bqJMyxqo9nhg7dm4Oebs3TJ.json
-              -sample2-7g4ucKuNJC9B4l0NE7Kqzf0KQIRbQpZG.json
-
+├─result/
+│   │─folder3/
+│       │ a-grCvDJcKPkkuF16zz8R2SNLLZ6G6qDCP.txt
+│       │ a-ma5Q3QtlDDAotBM171DKFuVli.6GO7UL.txt
+│       │─subfolder1/
+│           │ sample2-__MKXwPr5bqJMyxqo9nhg7dm4Oebs3TJ.json
+│           │ sample2-7g4ucKuNJC9B4l0NE7Kqzf0KQIRbQpZG.json
 ```
 
 ## Application Logs
