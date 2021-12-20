@@ -1,6 +1,6 @@
 const path = require('path');
 
-function getFilePath(key, outputDir, versionId) {
+function constructFilePath(key, outputDir, versionId) {
   const keyPath = path.parse(key);
   const dirName = path.join(outputDir, keyPath.dir);
   let fileName = `${keyPath.name}-${versionId}${keyPath.ext}`;
@@ -11,4 +11,4 @@ function getFilePath(key, outputDir, versionId) {
   }
 }
 
-module.exports = { getFilePath };
+module.exports = { constructFilePath };

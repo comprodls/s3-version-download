@@ -17,13 +17,7 @@ async function saveFile (dirname, fileName, data, key, versionId) {
     await fs.promises.mkdir(dirname, { recursive: true });
   }
 
-  fs.writeFile(fileName, data, (err) => {
-    if(err) {
-      throw new Error (`key= ${key}, version= ${versionId}, Couldn't save in local system`);
-    } else {
-      logger.info(`key= ${key}, version= ${versionId}, Saved in local system`);
-    }  
-  });
+  await fs.promises.writeFile(fileName, data);
 }
 
 module.exports = { readFile, saveFile };
