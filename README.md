@@ -99,6 +99,6 @@ The files will be downloaded and saved to the `ouputdir` folder. Saved file name
 ```
 
 ## Application Logs
-Application logs will be available in `logs/` folder with file name corresponding to UTC time of running te script, e.g. `logs/2021-12-20-12-47-53.log`
+Application logs will be available in `logs/` folder with file name corresponding to the time of running te script, e.g. `logs/2021-12-20-12-47-53.log`
 
 
