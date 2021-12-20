@@ -1,6 +1,6 @@
-const { getVersionData } = require('../util/s3methods');
-const { readFileData, writeFileData } = require('../util/fileMethods');
-const { getFilePath } = require('./getFilePath');
+const { getVersionData } = require('../util/s3-util');
+const { readFileData, writeFileData } = require('../util/file-util');
+const { getFilePath } = require('./file-path');
 const logger = require('../util/logger')
 
 async function downloadFiles(bucket, inputFile, outputFolder) {
