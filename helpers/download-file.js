@@ -18,7 +18,7 @@ async function downloadFiles(bucket, inputFile, outputDir) {
           logger.info(`Saving Key = ${selectedKey}, Version = ${selectedVersion}`);
           const data = await getObject(bucket, selectedKey, selectedVersion);
           const { dirName, fileName } = constructFilePath(selectedKey, outputDir, selectedVersion);
-          await saveFile(dirName, fileName, data, selectedKey, selectedVersion);
+          await saveFile(dirName, fileName, data);
         }
         catch (e) {
           logger.error(e.message);

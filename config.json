@@ -1,7 +1,7 @@
 {
 	"defaults": {
 		"inputfile": "input.json",
-		"outputDir": "result"
+		"outputdir": "result"
 	},
 	"LogConfig": {
 		"logDir": "logs"

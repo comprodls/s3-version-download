@@ -10,13 +10,12 @@ async function readFile (inputFile) {
   }
 }
 
-async function saveFile (dirname, fileName, data, key, versionId) {
+async function saveFile (dirname, fileName, data) {
   try {
     await fs.promises.stat(dirname);
   } catch (e) {
     await fs.promises.mkdir(dirname, { recursive: true });
   }
-
   await fs.promises.writeFile(fileName, data);
 }
 

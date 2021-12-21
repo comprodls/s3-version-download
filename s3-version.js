@@ -16,7 +16,7 @@ function checkArguments() {
     logger.info('No inputfile argument provided, using default');
   }
   if (!argv.outputdir) {
-    logger.info('No outputDir argument provided, using default');
+    logger.info('No outputdir argument provided, using default');
   }
 }
 
